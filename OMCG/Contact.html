@@ -32,10 +32,13 @@
     
     /* Navigation Bar */
     .navbar {
+      position: sticky;
+      top: 0;
       background: linear-gradient(to right, #ff7b00, #ffa74f);
       overflow: hidden;
       display: flex;
       align-items: center;
+      z-index: 1;
     }
     
     .navbar-logo {
@@ -151,6 +154,12 @@
       width: 40px;
     }
   </style>
+  <script>
+    window.addEventListener('scroll', function() {
+      var navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('sticky', window.scrollY > 0);
+    });
+  </script>
 <div class="navbar">
   <a href="index.html">
     <img src="Assets/OMCGLogo.jpg" alt="OMCGLogo" class="navbar-logo">
