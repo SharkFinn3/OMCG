@@ -68,20 +68,78 @@
     padding: 30px;
     border-radius: 50%;
   }
+  /* Styles for the contact page */
+  .contact-card {
+      background-color: #f9f9f9;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .contact-card h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    
+    .contact-card p {
+      margin-bottom: 10px;
+    }
+    
+    .contact-card label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    .contact-card input,
+    .contact-card textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      resize: vertical;
+    }
+    
+    .contact-card button {
+      background-color: #ff7b00;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .contact-card button:hover {
+      background-color: #e0ab24;
+    }
 </style>
 </head>
 <body>
 <div class="navbar">
-  <a href="#home">
+  <a href="index.html">
     <img src="Assets/OMCGLogo.jpg" alt="OMCGLogo" class="navbar-logo">
   </a>
-  <a class="active" href="#home">Home</a>
+  <a class="active" href="index.html">Home</a>
   <a href="About.html">About</a>
   <a href="Featured.html">Featured Guests</a>
   <a href="Podcasts.html">Episodes</a>
   <a href="Contact.html">Contact</a>
 </div>
-<div id="contact">
-    <h2>Contact</h2>
-    <p>theomcgpodcast@gmail.com</p>
-  </div>
+<div class="contact-card">
+  <h2>Contact Information</h2>
+  <p>Feel free to reach out to us with any questions, suggestions, or inquiries.</p>
+  
+  <form>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+    
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="4" required></textarea>
+    
+    <button type="submit">Send</button>
+  </form>
+</div>
