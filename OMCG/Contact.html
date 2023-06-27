@@ -1,81 +1,84 @@
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  h1 {
-    color: #333;
-    text-align: center;
-    font-size: 32px;
-  }
-  
-  p {
-    color: #777;
-    line-height: 1.5;
-  }
-  
-  .episode {
-    margin-bottom: 20px;
-  }
-  
-  .episode-title {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  .episode-description {
-    color: #555;
-  }
-  
-  /* Navigation Bar */
-  .navbar {
-    background: linear-gradient(to right, #ff7b00, #ff9933);
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-  }
-  
-  .navbar-logo {
-    width: 60px;
-    height: 60px;
-    margin-right: 10px;
-    border-radius: 50%;
-  }
-  
-  .navbar a {
-    color: #f2f2f2;
-    text-align: center;
-    padding: 30px;
-    text-decoration: none;
-    font-size: 24px;
-  }
-  
-  .navbar a:hover {
-    background-color: #e0ab24;
-    color: black;
-  }
-  
-  .navbar a.active {
-    background-color: #ff7b00;
-    color: white;
-  }
-  /* Centered and Circular Image */
-  .centered-image {
-    display: block;
-    margin: 0 auto;
-    padding: 30px;
-    border-radius: 50%;
-  }
-  /* Styles for the contact page */
-  .contact-card {
+  <title>OMCG</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+      font-size: 32px;
+    }
+    
+    p {
+      color: #777;
+      line-height: 1.5;
+    }
+    
+    .episode {
+      margin-bottom: 20px;
+    }
+    
+    .episode-title {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    
+    .episode-description {
+      color: #555;
+    }
+    
+    /* Navigation Bar */
+    .navbar {
+      background: linear-gradient(to right, #ff7b00, #ff9933);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+    }
+    
+    .navbar-logo {
+      width: 60px;
+      height: 60px;
+      margin-right: 10px;
+      border-radius: 50%;
+    }
+    
+    .navbar a {
+      color: #f2f2f2;
+      text-align: center;
+      padding: 30px;
+      text-decoration: none;
+      font-size: 24px;
+    }
+    
+    .navbar a:hover {
+      background-color: #e0ab24;
+      color: black;
+    }
+    
+    .navbar a.active {
+      background-color: #ff7b00;
+      color: white;
+    }
+    /* Centered and Circular Image */
+    .centered-image {
+      display: block;
+      margin: 0 auto;
+      padding: 30px;
+      border-radius: 50%;
+    }
+    /* Styles for the contact page */
+    .contact-card {
       background-color: #f9f9f9;
       border-radius: 8px;
       padding: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Updated shadow */
       max-width: 400px;
-      margin: 20px auto;
+      margin-left: auto;
+      margin-right: auto; /* Center the contact card */
+      margin-top: 50px;
     }
     
     .contact-card h2 {
@@ -114,16 +117,46 @@
     .contact-card button:hover {
       background-color: #e0ab24;
     }
-
-</style>
-</head>
-<body>
+    
+    /* Flash Alert */
+    .flash-alert {
+      display: none;
+      background-color: #ff7b00;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    .contact-info {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .contact-info p {
+      margin-bottom: 10px;
+    }
+    
+    .contact-info .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    .contact-info .logo {
+      display: inline-block;
+      margin: 0 10px;
+      height: 40px;
+      width: 40px;
+    }
+  </style>
 <div class="navbar">
   <a href="index.html">
     <img src="Assets/OMCGLogo.jpg" alt="OMCGLogo" class="navbar-logo">
   </a>
-  <a class="active" href="index.html">Home</a>
-  <a href="About.html">About</a>
+  <!-- <a class="active" href="index.html">Home</a> -->
+  <a href="About.html">The Host</a>
   <a href="Featured.html">Featured Guests</a>
   <a href="Podcasts.html">Episodes</a>
   <a href="Contact.html">Contact</a>
@@ -132,7 +165,7 @@
   <h2>Contact Information</h2>
   <p>Feel free to reach out to us with any questions, suggestions, or inquiries.</p>
   
-  <form>
+  <form id="contact-form">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
     
@@ -144,4 +177,38 @@
     
     <button type="submit">Send</button>
   </form>
+
+  <div id="flash-alert" class="flash-alert"></div>
+
+  <script>
+    // Flash alert after form submission
+    var contactForm = document.getElementById('contact-form');
+    var flashAlert = document.getElementById('flash-alert');
+
+    contactForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form submission
+      flashAlert.textContent = 'Message sent! Thank you for contacting us.';
+      flashAlert.style.display = 'block';
+      contactForm.reset(); // Clear form inputs
+      setTimeout(function() {
+        flashAlert.style.display = 'none'; // Hide flash alert after 3 seconds
+      }, 3000);
+    });
+  </script>
 </div>
+<div class="contact-info">
+  
+  <div class="logo-container">
+    <!-- Replace the URLs and logos with your own -->
+    <a href="https://www.instagram.com/theomcgpodcast/" target = "_blank">
+      <img src="Assets/Instagram_logo_2022.svg" alt="Logo 1" class="logo">
+    </a>
+    <a href="https://www.youtube.com/@ohmycurrygoodness" target = "_blank">
+      <img src="Assets/channels4_profile.jpg" alt="Logo 2" class="logo">
+    </a>
+    <a href="https://open.spotify.com/show/3BXqybNOCVXS0nfpAxLVFT?si=92fcfedfb36d4af4" target = "_blank">
+      <img src="Assets/spotify.png" alt="Logo 3" class="logo">
+    </a>
+  </div>
+</div>
+

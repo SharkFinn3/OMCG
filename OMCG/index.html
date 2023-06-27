@@ -35,10 +35,13 @@
     
     /* Navigation Bar */
     .navbar {
+      position: sticky;
+      top: 0;
       background: linear-gradient(to right, #ff7b00, #ff9933);
       overflow: hidden;
       display: flex;
       align-items: center;
+      z-index: 1;
     }
     
     .navbar-logo {
@@ -73,14 +76,20 @@
       border-radius: 50%;
     }
   </style>
+  <script>
+    window.addEventListener('scroll', function() {
+      var navbar = document.querySelector('.navbar');
+      navbar.classList.toggle('sticky', window.scrollY > 0);
+    });
+  </script>
 </head>
 <body>
   <div class="navbar">
     <a href="index.html">
       <img src="Assets/OMCGLogo.jpg" alt="OMCGLogo" class="navbar-logo">
     </a>
-    <a class="active" href="index.html">Home</a>
-    <a href="About.html">About</a>
+    <!-- <a class="active" href="index.html">Home</a> -->
+    <a href="About.html">The Host</a>
     <a href="Featured.html">Featured Guests</a>
     <a href="Podcasts.html">Episodes</a>
     <a href="Contact.html">Contact</a>
@@ -94,7 +103,7 @@
   
   <div id="about">
     <h2>About</h2>
-    <p>Add information about the podcast and the hosts or any other relevant details here.</p>
+    <p>Oh My Curry Goodness is a podcast created by Hamza Islam. This podcast is intended to be a talk-show where Hamza talks to young people about their life and how they became the person they are today. Each guest will reflect on their journey and hope to inspire listeners to be able to pursue their dreams and passions. Subscribe to Oh My Curry Goodness wherever you get your podcast. You can follow the podcast on YouTube with the link of the video in each episode description if you prefer to watch the conversation. </p>
   </div>
 </body>
 </html>
