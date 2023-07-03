@@ -80,12 +80,105 @@
       padding: 30px;
       border-radius: 50%;
     }
+    .contact-info {
+      text-align: center;
+      margin-top: 40px;
+    }
+    
+    .contact-info p {
+      margin-bottom: 10px;
+    }
+    
+    .contact-info .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+    }
+    
+    .contact-info .logo {
+      display: inline-block;
+      margin: 0 10px;
+      height: 40px;
+      width: 40px;
+    }
+    #image-gallery {
+  position: relative;
+}
+
+#image-container {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+#image-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#image-list li {
+  flex: 0 0 auto;
+  width: 200px;
+  margin-right: 10px;
+}
+
+#image-list img {
+  width: 100%;
+  height: auto;
+}
+
+#prev-button,
+#next-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#prev-button {
+  left: 10px;
+}
+
+#next-button {
+  right: 10px;
+}
+
   </style>
   <script>
     window.addEventListener('scroll', function() {
       var navbar = document.querySelector('.navbar');
       navbar.classList.toggle('sticky', window.scrollY > 0);
     });
+    $(document).ready(function() {
+  var imageContainer = $('#image-container');
+  var imageList = $('#image-list');
+  var prevButton = $('#prev-button');
+  var nextButton = $('#next-button');
+  
+  var imageWidth = imageList.find('li').outerWidth(true);
+  var containerWidth = imageContainer.outerWidth();
+  var scrollWidth = imageList[0].scrollWidth;
+  
+  // Show/hide arrows based on scroll position
+  imageContainer.scroll(function() {
+    var scrollLeft = imageContainer.scrollLeft();
+    prevButton.toggleClass('hidden', scrollLeft === 0);
+    nextButton.toggleClass('hidden', scrollLeft + containerWidth >= scrollWidth);
+  });
+  
+  // Scroll to previous image
+  prevButton.on('click', function() {
+    imageContainer.animate({ scrollLeft: '-=' + imageWidth }, 'fast');
+  });
+  
+  // Scroll to next image
+  nextButton.on('click', function() {
+    imageContainer.animate({ scrollLeft: '+=' + imageWidth }, 'fast');
+  });
+});
+
   </script>
 </head>
 <body>
@@ -106,6 +199,19 @@
     <h2>Hosted by Hamza Islam</h2>
     <p>This is the home page of the podcast. You can provide an overview or highlight recent episodes or featured content here.</p>
   </div>
+  <div id="image-gallery">
+    <div id="image-container">
+      <ul id="image-list">
+        <li><img src="Assets/ThisWeek.jpg" alt="Image 1"></li>
+        <li><img src="Assets/PopeyesKid.jpeg" alt="Image 2"></li>
+        <li><img src="path/to/image3.jpg" alt="Image 3"></li>
+        <!-- Add more <li> elements for additional images -->
+      </ul>
+    </div>
+    <button id="prev-button">Previous</button>
+    <button id="next-button">Next</button>
+  </div>
+  
   
   <div id="about">
     <h2>About</h2>
@@ -113,3 +219,21 @@
   </div>
 </body>
 </html>
+<div class="contact-info">
+  
+  <div class="logo-container">
+    <!-- Replace the URLs and logos with your own -->
+    <a href="https://www.instagram.com/theomcgpodcast/" target = "_blank">
+      <img src="Assets/Instagram_logo_2022.svg" alt="Logo 1" class="logo">
+    </a>
+    <a href="https://www.youtube.com/@ohmycurrygoodness" target = "_blank">
+      <img src="Assets/channels4_profile.jpg" alt="Logo 2" class="logo">
+    </a>
+    <a href="https://open.spotify.com/show/3BXqybNOCVXS0nfpAxLVFT?si=92fcfedfb36d4af4" target = "_blank">
+      <img src="Assets/spotify.png" alt="Logo 3" class="logo">
+    </a>
+    <a href="https://podcasts.apple.com/podcast/id1661892929?ign-itscg=30200&ign-itsct=lt_p" target = "_blank">
+      <img src="Assets/applePodcasts.webp" alt="Logo 4" class="logo">
+    </a>
+  </div>
+</div>

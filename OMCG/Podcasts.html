@@ -16,7 +16,7 @@
     line-height: 1.5;
   }
   
-  .episode {
+  /* .episode {
     margin-bottom: 20px;
   }
   
@@ -28,7 +28,7 @@
   .episode-description {
     color: #555;
   }
-  
+   */
   /* Navigation Bar */
   .navbar {
     position: sticky;
@@ -71,6 +71,30 @@
     padding: 30px;
     border-radius: 50%;
   }
+  #image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 20px;
+}
+
+.episode {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.episode-title {
+  margin-top: 0;
+}
+
+.episode-description {
+  margin-bottom: 0;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
 </style>
 <script>
   window.addEventListener('scroll', function() {
