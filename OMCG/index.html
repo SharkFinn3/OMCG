@@ -2,150 +2,7 @@
 <html>
 <head>
   <title>OMCG</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    
-    h1 {
-      color: #333;
-      text-align: center;
-      font-size: 32px;
-    }
-    
-    p {
-      color: #777;
-      line-height: 1.5;
-    }
-    
-    .episode {
-      margin-bottom: 20px;
-    }
-    
-    .episode-title {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    
-    .episode-description {
-      color: #555;
-    }
-    
-    /* Navigation Bar */
-    .navbar {
-      position: sticky;
-      top: 0;
-      left: 0;
-      right: 0;
-      width: 100%;
-      background: linear-gradient(to right, #ff7b00, #ffa74f);
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      z-index: 1;
-      margin: 0;
-      padding: 0;
-    }
-    
-    .navbar-logo {
-      width: 60px;
-      height: 60px;
-      margin-right: 10px;
-      border-radius: 50%;
-    }
-    
-    .navbar a {
-      color: #f2f2f2;
-      text-align: center;
-      padding: 30px;
-      text-decoration: none;
-      font-size: 24px;
-    }
-    
-    .navbar a:hover {
-      background-color: #e0ab24;
-      color: black;
-    }
-    
-    .navbar a.active {
-      background-color: #ff7b00;
-      color: white;
-    }
-    /* Centered and Circular Image */
-    .centered-image {
-      display: block;
-      margin: 0 auto;
-      padding: 30px;
-      border-radius: 50%;
-    }
-    .contact-info {
-      text-align: center;
-      margin-top: 40px;
-    }
-    
-    .contact-info p {
-      margin-bottom: 10px;
-    }
-    
-    .contact-info .logo-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: 10px;
-    }
-    
-    .contact-info .logo {
-      display: inline-block;
-      margin: 0 10px;
-      height: 40px;
-      width: 40px;
-    }
-    #image-gallery {
-  position: relative;
-}
-
-#image-container {
-  display: flex;
-  overflow-x: scroll;
-  scroll-behavior: smooth;
-}
-
-#image-list {
-  display: flex;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#image-list li {
-  flex: 0 0 auto;
-  width: 200px;
-  margin-right: 10px;
-}
-
-#image-list img {
-  width: 100%;
-  height: auto;
-}
-
-#prev-button,
-#next-button {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-#prev-button {
-  left: 10px;
-}
-
-#next-button {
-  right: 10px;
-}
-
-  </style>
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <script>
     window.addEventListener('scroll', function() {
       var navbar = document.querySelector('.navbar');
@@ -199,21 +56,21 @@
     <h2>Hosted by Hamza Islam</h2>
     <p>This is the home page of the podcast. You can provide an overview or highlight recent episodes or featured content here.</p>
   </div>
-  <div id="image-gallery">
+  <!-- <div id="image-gallery">
     <div id="image-container">
       <ul id="image-list">
         <li><img src="Assets/ThisWeek.jpg" alt="Image 1"></li>
         <li><img src="Assets/PopeyesKid.jpeg" alt="Image 2"></li>
         <li><img src="path/to/image3.jpg" alt="Image 3"></li>
-        <!-- Add more <li> elements for additional images -->
+        <!Add more <li> elements for additional images 
       </ul>
     </div>
     <button id="prev-button">Previous</button>
     <button id="next-button">Next</button>
-  </div>
+  </div> -->
   
   
-  <div id="about">
+  <div >
     <h2>About</h2>
     <p>Oh My Curry Goodness is a podcast created by Hamza Islam. This podcast is intended to be a talk-show where Hamza talks to young people about their life and how they became the person they are today. Each guest will reflect on their journey and hope to inspire listeners to be able to pursue their dreams and passions. Subscribe to Oh My Curry Goodness wherever you get your podcast. You can follow the podcast on YouTube with the link of the video in each episode description if you prefer to watch the conversation. </p>
   </div>
