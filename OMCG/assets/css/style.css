@@ -288,6 +288,7 @@ header .container {
 .hero-title {
   width: 100%;
   margin-bottom: 20px;
+  /* display: none; */
 }
 
 .hero-text {
@@ -665,7 +666,10 @@ header .container {
    * HERO
    */
 
-  .hero-title { width: 90%; }
+  .hero-title { 
+    width: 90%; 
+    display: none;
+  }
 
   .hero :is(.btn-primary, .btn-title, .btn-link) {
     --fs-4: 16px;
@@ -932,6 +936,7 @@ header .container {
   .hero-title {
     width: 100%;
     margin-bottom: 30px;
+    display: none;
   }
 
   .hero-text { margin-bottom: 25px; }
