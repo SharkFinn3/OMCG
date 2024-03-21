@@ -617,7 +617,7 @@ header .container {
   pointer-events: all;
 }
 
-.go-top:is(:hover, :focus) { --blue-ryb: hsl(221, 100%, 40%); }
+.go-top:is(:hover, :focus) { --blue-ryb: hsl(0, 0%, 100%); }
 
 
 
