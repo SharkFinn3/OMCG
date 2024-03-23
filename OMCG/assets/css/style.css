@@ -153,7 +153,9 @@ body {
 
 .btn-primary > span { margin-top: 3px; }
 
-.container { padding: 0 15px; }
+.container { 
+  padding: 0 15px; 
+}
 
 .h3 {
   color: var(--white);
@@ -350,7 +352,9 @@ header .container {
   #PODCAST
 \*-----------------------------------*/
 
-.podcast { padding: var(--section-padding) 0; }
+.podcast { 
+  padding: var(--section-padding) 0; 
+}
 
 .podcast-list {
   display: grid;
@@ -510,6 +514,11 @@ header .container {
 .footer-top {
   padding: var(--section-padding) 0;
   border-bottom: 1px solid var(--space-cadet);
+  /* border-top: 1px solid white; */
+  background: linear-gradient(180deg, var(--dark-violet) 0%, rgb(241, 71, 71) 100%);
+}
+.footer-bottom {
+  background: linear-gradient(180deg, rgb(241, 71, 71) 0%, rgb(248, 32, 32) 100%);
 }
 
 .footer-brand,
